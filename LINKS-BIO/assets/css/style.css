@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    width: center;
+    display: grid;
+    place-items: center;
+    background: #0e0529;
+}
+
+.caixa {
+/**/top: 4em;
+    left: center;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #0e0529;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 0.6s;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixa:hover {
+    width: 400px;
+    height: 400px;
+}
+
+.caixa::before {
+    position: absolute;
+    content: "";
+    inset: -5px 70px;
+    background: linear-gradient(315deg, #fff, #06e7f7);
+    animation: animar 6s linear infinite;
+    z-index: 1;
+}
+
+@keyframes animar {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+.caixa:hover::before {
+    inset: -20px 0px;
+}
+
+.caixa::after {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    background-image: url(https://media.giphy.com/media/fSeQICKvIpaGlNK8o4/giphy.gif);
+    background-position: center center;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.conteudo {
+    position: absolute;
+    inset: 12px;
+    border: 2.5px solid #040305;
+    z-index: 2;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    user-select: none;
+    transition: 0.10s;
+}
+
+.conteudo:hover {
+    inset: 15px;
+    border: 2px solid #040305;
+    transition: 0.5s;
+}
+
+.conteudo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+    pointer-events: none;
+}
+
+.caixa:hover .conteudo img {
+    opacity: 0;
+}
+
+.conteudo h2 {
+    font-size: 1.5;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.conteudo h2 span {
+    font-weight: 300;
+    font-size: .75em;
+}
+
+.conteudo > span {
+    font-size: 2.5em;
+}
+
+.conteudo a {
+    margin-top: 10px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #6b6b6b;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.conteudo a:hover {
+    letter-spacing: .2em;
+    color: #dd4b39;
+}
+
+
+/*QUADRADO ANIMADO*/
+
+.container {
+    background-image: url(https://media.giphy.com/media/fSeQICKvIpaGlNK8o4/giphy.gif);
+    background-position: center;
+    position: flex;
+    height: 450px;
+    width: 350px;
+    display: grid;
+    margin-top: 8em;
+    border-radius: 15px;
+}
+
+.container::before {
+    position: absolute;
+    height: 450px;
+    width: 350px;
+    content: "";
+    width: center;
+    background-image: url(https://media.giphy.com/media/fSeQICKvIpaGlNK8o4/giphy.gif);
+    animation: animar2 3s linear infinite;
+    border-radius: 15px;
+    z-index: -1;
+}
+
+@keyframes animar2 {
+    0% 
+    {
+        filter: hue-rotate(0deg) brightness(100%) blur(10px);
+    }
+    100%
+    {
+        filter: hue-rotate(360deg) brightness(100%) blur(10px);
+    }
+}
+
+
+/* COPYRIGHT */
+
+.bt > d {
+    position: absolute;
+    margin-top: 21em;
+    left: -1.9em;
+    color: #fff;
+}
+/* BOTOES */
+
+.bt {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -13em;
+    left: center;
+}
+
+.bt .btn {
+    position: flex;
+    text-align: center;
+    height: 50px;
+    width: 250px;
+    margin-bottom: 3px;
+    overflow: hidden;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+    border: 0;
+    border-radius: 5px;
+}
+
+.bt .btn:hover {
+    width: 280px;
+}
+
+.bt .btn .icon {
+    height: center;
+    width: center;
+    text-align: center;
+    line-height: 60px;
+    color: #000;
+    transition: all 0.3s ease-out;
+}
+
+.portfolio:hover .icon {
+    background: #627870;
+}
+.github:hover .icon {
+    background: #333;
+}
+.linkedin:hover .icon {
+    background: #0A66C2;
+}
+.youtube:hover .icon {
+    background: #c4302b;
+}
+
+
+.bt .btn:hover .icon i {
+    font-size: 20px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+.bt .btn:hover .icon {
+    color: #fff
+}
+
+.bt .btn span {
+    font-size: 20px;
+    font-weight: 500px;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.5s ease-out;
+}
+
+.portfolio:hover span {
+    color:#fff;
+}
+.github:hover span {
+    color: #fff
+}
+.linkedin:hover span {
+    color: #fff
+}
+.youtube:hover span {
+    color: #fff
+}
